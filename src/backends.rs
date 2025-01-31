@@ -163,6 +163,9 @@ cfg_if! {
             For more information see: \
             https://docs.rs/getrandom/#webassembly-support"
         );
+    } else if #[cfg(target_os="twizzler")] {
+        mod twizzler;
+        pub use twizzler::*;
     } else {
         compile_error!("target is not supported. You may need to define \
                         a custom backend see: \
