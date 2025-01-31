@@ -70,6 +70,10 @@ wasi = { version = "0.14", default-features = false }
 [target.'cfg(all(windows, not(target_vendor = "win7")))'.dependencies]
 windows-targets = "0.53"
 
+# twizzler 
+[target.'cfg(target_os = "twizzler")'.dependencies]
+twizzler-rt-abi = "0.99.0"
+
 # wasm_js
 [target.'cfg(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")))'.dependencies]
 wasm-bindgen = { version = "0.2.98", default-features = false, optional = true }
